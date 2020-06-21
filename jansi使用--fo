@@ -1,0 +1,57 @@
+
+	import org.fusesource.jansi.Ansi;
+import org.fusesource.jansi.AnsiConsole;
+
+import java.awt.*;
+import java.util.Scanner;
+
+import static java.awt.Color.*;
+import static org.fusesource.jansi.Ansi.*;
+import static org.fusesource.jansi.Ansi.Color.*;
+import static org.fusesource.jansi.Ansi.Color.BLUE;
+import static org.fusesource.jansi.Ansi.Color.CYAN;
+import static org.fusesource.jansi.Ansi.Color.GREEN;
+import static org.fusesource.jansi.Ansi.Color.RED;
+import static org.fusesource.jansi.Ansi.Color.WHITE;
+import static org.fusesource.jansi.Ansi.Color.YELLOW;
+
+public class Main {
+    private static final String[] fo = {
+            "                  _ooOoo",
+            "                 o8888888o",
+            "                88\" . \"88",
+            "                 (| -_- |)",
+            "                  O\\ = /O",
+            "              ____/`---'\\",
+            "            .    ' \\\\| |// `.",
+            "           / \\\\||| : |||// \\",
+            "          / _||||| -:- |||||- \\",
+            "           | | \\\\\\ - /// | |",
+            "           | \\_| ''\\---/'' | |",
+            "           \\ .-\\__ `-` ___/-. /",
+            "           ___`. .' /--.--\\ `. . __",
+            "     .\"\" '< `.___\\_<|>_/___.' >'\"\".",
+            "     | | : `- \\`.;`\\ _ /`;.`/ - ` : | |",
+            "       \\ \\ `-. \\_ __\\ /__ _/ .-` / /",
+            "======`-.____`-.___\\_____/___.-`____.-'======",
+            "                    `=---='"
+    };
+    private static void printFO(Ansi.Color color) {
+        System.out.println(ansi().eraseScreen());
+        for (String line : fo) {
+            System.out.println(ansi().fg(color).a(line).reset());
+        } Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
+    }
+
+    public static void main(String[] args) {
+        AnsiConsole.systemInstall();
+        printFO(RED);
+        printFO(BLUE);
+        printFO(YELLOW);
+        printFO(GREEN);
+        printFO(CYAN);
+        printFO(WHITE);
+        AnsiConsole.systemUninstall();
+    }
+}
